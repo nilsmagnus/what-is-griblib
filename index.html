@@ -29,13 +29,14 @@
 		  <h3>griblib</h3>
 		  <p>github.com/nilsmagnus/grib/griblib</p>
  		  <p>Go Oslo @Vipps, 2019 march 5th</p>
-		  <p>Nils Larsgård, kodemaker </p>
 		</section>
 		<section>
+		  <p>Nils Larsgård </p>
 		  <p>
+
 		  <p class="fragment" data-fragment-index="1">programmer</p>
 		  <p class="fragment" data-fragment-index="2">consultant (kodemaker.no)</p>
-		  <p class="fragment" data-fragment-index="3">java, kotlin</p>
+		  <p class="fragment" data-fragment-index="3">java, kotlin, go</p>
 		  </p>
 		</section>
 		<section>
@@ -51,7 +52,9 @@
 		<section>
 		  <p>What is griblib?</p>
 		  <p class="fragment" data-fragment-index="1">library to parse grib2files</p>
-		  <pre class="fragment" data-fragment-index="1"><code data-trim data-noescape>
+		  <p class="fragment" data-fragment-index="2">implemented in go</p>
+		  <p class="fragment" data-fragment-index="3">0 dependencies</p>
+		  <pre class="fragment" data-fragment-index="4"><code data-trim data-noescape>
 gribfile, err := os.Open("somegrib2file.grib2")
 if err != nil {
 	b.Fatalf("Could not open test-file %v", err)
@@ -97,8 +100,17 @@ for _, message := range messages {
 		    <span class="fragment" data-fragment-index="9">Forecast Radar Imagery</span>
 		  </p>
 		</section>
+		<section>
+		  <p>hourly forecasts</p>
+		  <p>"actuals"</p>
+		</section>
+		<section>
+		  <p>hourly forecasts</p>
+		  <p>"actuals"</p>
+		</section>
 	      </section>
 	      <section>
+
 		<section>
 		  <p>grib specification</p>
 		  <p class="fragment" data-fragment-index="1">Section[0-7]</p>
@@ -177,10 +189,37 @@ err := binary.Read(reader, binary.BigEndian, &amp;section0)
 		</section>
 		<section>
 		  <h1>section7</h1>
-		  is (possibly) compressed
+		  <p>is (possibly) compressed</p>
+		  <p>defined in section 5(table 5.0)</p>
+		  <p class="fragment" data-fragment-index="1">PNG, JPEG, Grids(complex, simple, spatial differencing), Spectrals, etc.</p>
 		</section>
+		<section>
+		  <p>Grid Point Data - Complex Packing and Spatial Differencing</p>
+		  <p class="fragment" data-fragment-index="1"><i>bitgroups</i> to describe the data</p>
+		  <p class="fragment" data-fragment-index="2">[00101111][10110010][10010010][01001011]</p>
+		  <p class="fragment" data-fragment-index="3">Width=3, Length=6:<br>
+		    [
+		    <span style="color:cyan">001</span>
+		    <span style="color:yellow">011</span>
+		    <span style="color:lightgreen">11][1</span>
+		    <span style="color:cyan">011</span>
+		    <span style="color:yellow">001</span>
+		    <span style="color:lightgreen">0][10</span>
+		    0010010][01001011]
+		  </p>
+		</section>
+ 		<section>
+		  <pre><code data-trim data-noescape>bit := uint((r.byte >> (7 - r.offset)) & 0x01)</code></pre>
+		</section>
+		<section>
+		  Custom compression, custom performance
+		  <p class="fragment" data-fragment-index="1">profiling and tuning with `go tool pprof`</p>
+		  <p class="fragment" data-fragment-index="2">reduced memory usage from 8-9Gb to 1.5Gb</p>
+		  <p class="fragment" data-fragment-index="3">still using 6-7% of the time in gc</p>
+		</section>
+		
 	      </section>
-	      
+
 
 	    </div> 
 	  </div>
