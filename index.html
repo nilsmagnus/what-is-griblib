@@ -101,19 +101,15 @@ for _, message := range messages {
 		  </p>
 		</section>
 		<section>
-		  <p>hourly forecasts</p>
-		  <p>"actuals"</p>
-		</section>
-		<section>
-		  <p>hourly forecasts</p>
-		  <p>"actuals"</p>
+		  <p class="fragment" data-fragment-index="1">hourly forecasts</p>
+		  <p class="fragment" data-fragment-index="2">"actuals"</p>
 		</section>
 	      </section>
 	      <section>
 
 		<section>
 		  <p>grib specification</p>
-		  <p class="fragment" data-fragment-index="1">Section[0-7]</p>
+		  <p class="fragment" data-fragment-index="1">1 message contains Section[0-7]</p>
 		</section>
 		<section>
 		  <h3>Section0</h3>
@@ -214,8 +210,10 @@ err := binary.Read(reader, binary.BigEndian, &amp;section0)
 		<section>
 		  Custom compression, custom performance
 		  <p class="fragment" data-fragment-index="1">profiling and tuning with `go tool pprof`</p>
-		  <p class="fragment" data-fragment-index="2">reduced memory usage from 8-9Gb to 1.5Gb</p>
-		  <p class="fragment" data-fragment-index="3">still using 6-7% of the time in gc</p>
+		  <p class="fragment" data-fragment-index="2" style="color:red">profile demonstration</p>
+		  <p class="fragment" data-fragment-index="3">reduced memory usage from initial ~9Gb to ~3Gb</p>
+		  <p class="fragment" data-fragment-index="4">reduced cpu-time in gc</p>
+		  <p class="fragment" data-fragment-index="5">sacrificed readability over performance</p>
 		</section>
 		
 	      </section>
