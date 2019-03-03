@@ -26,7 +26,7 @@
 	    <div class="slides">
 	      <section>
 		<section>
-		  <h3>griblib</h3>
+		  <h1>griblib</h1>
 		  <p>github.com/nilsmagnus/grib/griblib</p>
  		  <p>Go Oslo @Vipps, 2019 march 5th</p>
 		</section>
@@ -41,7 +41,7 @@
 		</section>
 		<section>
 		  <p>
-		  <p class="fragment" data-fragment-index="1">started go in 2013</p>
+		  <p class="fragment" data-fragment-index="1">started to go in 2013</p>
 		  <p class="fragment" data-fragment-index="2">contributed to go, "mime/multipart" </p>
 		  <p class="fragment" data-fragment-index="3">took over griblib after a massive PR </p>
 		  </p>
@@ -101,8 +101,8 @@ for _, message := range messages {
 		  </p>
 		</section>
 		<section>
-		  <p class="fragment" data-fragment-index="1">hourly forecasts</p>
-		  <p class="fragment" data-fragment-index="2">"actuals"</p>
+		  <p class="fragment" data-fragment-index="1">hourly forecasts(snapshots)</p>
+		  <p class="fragment" data-fragment-index="2">observations, "actuals"</p>
 		</section>
 	      </section>
 	      <section>
@@ -214,9 +214,44 @@ err := binary.Read(reader, binary.BigEndian, &amp;section0)
 		  <p class="fragment" data-fragment-index="3">reduced memory usage from initial ~9Gb to ~3Gb</p>
 		  <p class="fragment" data-fragment-index="4">reduced cpu-time in gc</p>
 		  <p class="fragment" data-fragment-index="5">sacrificed readability over performance</p>
-		</section>
-		
+		</section>		
 	      </section>
+
+	      <section>
+		<section>
+		  <h3>Community</h3>
+		  <p>contributors</p>
+		  <p>ecosystem</p>
+		</section>
+
+		<section>
+		  <p>&#9734; 10</p>
+		  <img src="community.png" class="fragment" data-fragment-index="1" />
+		  <p  class="fragment" data-fragment-index="2">mentioned in a golang newsletter</p>
+		</section>
+
+		<section>
+		  <p class="fragment" data-fragment-index="1">built in exports(csv,json,text,filters)</p>
+		  <p class="fragment" data-fragment-index="2">supporting apps, influx-db-export</p>
+		</section>
+
+		<section>
+		  <img src="leia-2.png"  />
+		</section>
+
+	      </section>
+
+	      <section>
+		<section>
+		  <h1>Thank you</h1>
+		  <ul>
+		    <li>github.comm/nilsmagnus/grib</li>
+		    <li>nils@kodemaker.no</li>
+		    <li>twitter.com/nils_magnus</li>
+		  </ul>
+		</section>
+	      </section>
+	      
 
 
 	    </div> 
