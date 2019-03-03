@@ -68,7 +68,7 @@ for _, message := range messages {
 
 		</section>
 		<section>
-		  <p class="fragment" data-fragment-index="1">"<span style="color:blue">GRIB</span> (<span style="color:blue">GRI</span>dded <span style="color:blue">B</span>inary or General Regularly-distributed Information in Binary form) is a concise data format commonly used in meteorology to store historical and forecast weather data." [<i>wikipedia</i>]</p>
+		  <p class="fragment" data-fragment-index="1">"<span style="color:lightgreen">GRIB</span> (<span style="color:lightgreen">GRI</span>dded <span style="color:lightgreen">B</span>inary or <span style="color:green">G</span>eneral <span style="color:green">R</span>egularly-distributed <span style="color:green">I</span>nformation in <span style="color:green">B</span>inary form) is a concise data format commonly used in meteorology to store historical and forecast weather data." [<i>wikipedia</i>]</p>
 		  <aside class="notes">
 		    mention usage: meterological institutes around the world, this is the standard file-format
 		  </aside>
@@ -78,12 +78,11 @@ for _, message := range messages {
 		    <span class="fragment" data-fragment-index="1">compressed</span>
 		    <span class="fragment" data-fragment-index="3">binary</span>
 		    <span class="fragment" data-fragment-index="2">data</span>
-		    <span class="fragment" data-fragment-index="4"></span>
 		  </h3>
 		  <p>
 		    <span class="fragment" data-fragment-index="5" style="color:red">Moisture</span>,
 		    <span class="fragment" data-fragment-index="8">Momentum</span>,
-		    <span class="fragment" data-fragment-index="6" style="color:red">Temperature</span>,
+		    <span class="fragment" data-fragment-index="4" style="color:red">Temperature</span>,
 		    <span class="fragment" data-fragment-index="9">Mass</span>,
 		    <span class="fragment" data-fragment-index="7">Short wave radiation</span>,
 		    <span class="fragment" data-fragment-index="5">Long wave radiation</span>,
@@ -173,16 +172,17 @@ type Section0 struct {
 		    </code><code data-trim data-noescape class="fragment" data-fragment-index="3">
 ...
 err := binary.Read(reader, binary.BigEndian, &amp;section0)
-		    </code></pre>
+		  </code></pre>
 		  
 		</section>
+		<section>
+		  Same strategy for section[1-6]
+		</section>
+
 		
 	      </section>
 
 	      <section>
-		<section>
-		  Same strategy for section[1-6]
-		</section>
 		<section>
 		  <h1>section7</h1>
 		  <p>is (possibly) compressed</p>
@@ -219,15 +219,15 @@ err := binary.Read(reader, binary.BigEndian, &amp;section0)
 
 	      <section>
 		<section>
-		  <h3>Community</h3>
+		  <h3>Ecosystem</h3>
 		  <p>contributors</p>
-		  <p>ecosystem</p>
+		  <p>apps</p>
 		</section>
 
 		<section>
 		  <p>&#9734; 10</p>
 		  <img src="community.png" class="fragment" data-fragment-index="1" />
-		  <p  class="fragment" data-fragment-index="2">mentioned in a golang newsletter</p>
+		  <p  class="fragment" data-fragment-index="1">mention in a golang newsletter</p>
 		</section>
 
 		<section>
@@ -252,8 +252,6 @@ err := binary.Read(reader, binary.BigEndian, &amp;section0)
 		</section>
 	      </section>
 	      
-
-
 	    </div> 
 	  </div>
 
