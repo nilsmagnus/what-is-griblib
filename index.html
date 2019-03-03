@@ -102,6 +102,7 @@ for _, message := range messages {
 		<section>
 		  <p class="fragment" data-fragment-index="1">hourly forecasts(snapshots)</p>
 		  <p class="fragment" data-fragment-index="2">observations, "actuals"</p>
+		  <p class="fragment" data-fragment-index="3">c/fortran libraries are good</p>
 		</section>
 	      </section>
 	      <section>
@@ -171,7 +172,7 @@ type Section0 struct {
 }
 		    </code><code data-trim data-noescape class="fragment" data-fragment-index="3">
 ...
-err := binary.Read(reader, binary.BigEndian, &amp;section0)
+err := binary.Read(ioReader, binary.BigEndian, &amp;section0)
 		  </code></pre>
 		  
 		</section>
@@ -227,8 +228,7 @@ err := binary.Read(reader, binary.BigEndian, &amp;section0)
 		<section>
 		  <p>&#9734; 10</p>
 		  <img src="community.png" class="fragment" data-fragment-index="1" />
-		  <p  class="fragment" data-fragment-index="1">mention in a golang newsletter</p>
-		</section>
+ 		</section>
 
 		<section>
 		  <p class="fragment" data-fragment-index="1">built in exports(csv,json,text,filters)</p>
@@ -239,6 +239,10 @@ err := binary.Read(reader, binary.BigEndian, &amp;section0)
 		  <img src="leia-2.png"  />
 		</section>
 
+		<section>
+		  <p>machinelearning from forecast archive</p>
+		  <p class="fragment" data-fragment-index="1">predict weather-correlated stuff</p>
+		</section>
 	      </section>
 
 	      <section>
