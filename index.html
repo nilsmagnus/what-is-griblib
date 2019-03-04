@@ -181,6 +181,7 @@ type Section0 struct {
 }
 		    </code><code data-trim data-noescape class="fragment" data-fragment-index="3">
 ...
+section0 := Section0{}
 err := binary.Read(ioReader, binary.BigEndian, &amp;section0)
 		  </code></pre>
 		  
