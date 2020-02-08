@@ -28,11 +28,12 @@
 		<section>
 		  <h1>griblib</h1>
 		  <p>github.com/nilsmagnus/grib/griblib</p>
- 		  <p>Kodemaker fagdag 13.februar 2019</p>
+ 		  <p>Kodemaker fagdag 2020-02-13</p>
 		</section>
 		<section>
 		  <p>
-		  <p class="fragment" data-fragment-index="1">tok over griblib etter en massiv PR </p>
+		  <p class="fragment" data-fragment-index="1">Jeg heter Nils </p>
+		  <p class="fragment" data-fragment-index="2">tok over griblib etter en massiv PR </p>
 		  </p>
 		  
 		</section>
@@ -41,21 +42,21 @@
 		  <ul>
 		    <li class="fragment" data-fragment-index="1">grib specification</li>
 		    <li class="fragment" data-fragment-index="2">griblib features</li>
-		    <li class="fragment" data-fragment-index="3">profiling</li>
+		    <li class="fragment" data-fragment-index="3">profiling & optmization</li>
 		    <li class="fragment" data-fragment-index="4">motivation</li>
 		  </ul>
 		</section>
 	      </section>
 	      <section>
 		<section>
-		  <p>What is griblib?</p>
-		  <p class="fragment" data-fragment-index="1">library to parse grib2files</p>
+		  <h2>TLDR;</h2>
+		  <p class="fragment" data-fragment-index="1">library to parse grib2-files</p>
 		  <p class="fragment" data-fragment-index="2">implemented in go</p>
 		  <p class="fragment" data-fragment-index="3">0 dependencies</p>
 		  <pre class="fragment" data-fragment-index="4"><code data-trim data-noescape>
 gribfile, err := os.Open("somegrib2file.grib2")
 if err != nil {
-	b.Fatalf("Could not open test-file %v", err)
+	b.Fatalf("Could not open test-file %w", err)
 }
 messages, err := griblib.ReadMessages(gribfile)
 
@@ -225,7 +226,7 @@ err := binary.Read(ioReader, binary.BigEndian, &amp;section0)
 		</section>
 
 		<section>
-		  <p>&#9734; 10</p>
+		  <p>&#9734; 20</p>
 		  <img src="community.png" class="fragment" data-fragment-index="1" />
  		</section>
 
